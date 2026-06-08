@@ -1,53 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Saner Holzbau | Tradition trifft Zukunft</title>
-  <meta name="description" content="Saner Holzbau – Dachstühle, Fassaden, Terrassen, Umbauten und Spezialanfertigungen aus Holz. Persönlich. Direkt. Europaweit." />
-  <style>
-    :root{
-      --bg:#f4efe6; --paper:#fffaf1; --ink:#17191a; --muted:#6d675f; --wood:#b98244; --dark:#101112; --line:#d8caba;
-      --max:1180px;
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55} img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
-    .wrap{width:min(var(--max),calc(100% - 38px));margin-inline:auto}.btn{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--ink);padding:.95rem 1.2rem;text-transform:uppercase;letter-spacing:.09em;font-size:.78rem;font-weight:800;background:var(--ink);color:var(--paper);transition:.2s}.btn.secondary{background:transparent;color:var(--ink)}.btn:hover{transform:translateY(-2px)}
-    header{position:fixed;inset:0 0 auto 0;z-index:20;background:rgba(244,239,230,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.08)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-weight:900;letter-spacing:.16em;text-transform:uppercase}.brand small{display:block;font-size:.66rem;color:var(--wood);letter-spacing:.22em;margin-top:-3px}.links{display:flex;gap:1.2rem;align-items:center;font-size:.78rem;text-transform:uppercase;letter-spacing:.11em;font-weight:800}.links a{opacity:.75}.links a:hover{opacity:1}.mobile{display:none}
-    .hero{min-height:100vh;display:grid;place-items:center;padding:112px 0 60px;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(16,17,18,.78),rgba(16,17,18,.36)),url('assets/wanderschaft.webp') center/cover}.hero:after{content:"";position:absolute;inset:auto 0 0;height:36%;background:linear-gradient(transparent,var(--bg))}.hero .inner{position:relative;z-index:1;color:white}.eyebrow{letter-spacing:.18em;text-transform:uppercase;color:var(--wood);font-size:.8rem;font-weight:900}.hero h1{font-size:clamp(3rem,9vw,8rem);line-height:.88;margin:.6rem 0;text-transform:uppercase;letter-spacing:.03em}.hero p{font-size:clamp(1.05rem,2.2vw,1.55rem);max-width:720px;color:rgba(255,255,255,.88)}.actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}.hero .btn.secondary{color:white;border-color:rgba(255,255,255,.75)}
-    section{padding:92px 0}.intro{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}.intro .logo-card{background:var(--paper);border:1px solid var(--line);padding:3rem;box-shadow:0 18px 60px rgba(0,0,0,.08)}h2{font-size:clamp(2rem,5vw,4.2rem);line-height:.98;margin:0 0 1.2rem;text-transform:uppercase;letter-spacing:.02em}.lead{font-size:1.25rem;color:var(--muted);max-width:760px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.value{background:var(--paper);padding:2rem}.value b{font-size:1.2rem;text-transform:uppercase}.value p{color:var(--muted)}
-    .dark{background:var(--dark);color:var(--paper)}.dark .lead,.dark p{color:rgba(255,250,241,.72)}.services{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#333;border:1px solid #333;margin-top:2.5rem}.service{min-height:240px;padding:1.4rem;display:flex;align-items:end;position:relative;background:#222;overflow:hidden}.service img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.52;transition:.4s}.service:hover img{transform:scale(1.05);opacity:.72}.service span{position:relative;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem}
-    .projects-head{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:2rem}.projects{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.project{position:relative;min-height:330px;background:#ddd;overflow:hidden;border:1px solid var(--line)}.project.big{grid-column:span 7}.project.mid{grid-column:span 5}.project.small{grid-column:span 4}.project img{width:100%;height:100%;object-fit:cover;transition:.5s}.project:hover img{transform:scale(1.04)}.caption{position:absolute;inset:auto 0 0;padding:4rem 1.25rem 1.25rem;background:linear-gradient(transparent,rgba(0,0,0,.78));color:white}.caption b{display:block;text-transform:uppercase;letter-spacing:.08em}.caption small{color:rgba(255,255,255,.8)}
-    .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}.about img{border:1px solid var(--line);box-shadow:0 18px 60px rgba(0,0,0,.08)}.quote{font-size:clamp(1.6rem,3vw,2.6rem);line-height:1.12;font-weight:900;margin:1.4rem 0}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2rem}.fact{background:var(--paper);padding:1.4rem}.fact strong{font-size:2rem}.fact span{display:block;color:var(--muted);font-size:.9rem}
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}.contact-card{background:var(--paper);border:1px solid var(--line);padding:2.2rem}.contact-list{display:grid;gap:.9rem}.contact-list a,.contact-list div{border-bottom:1px solid var(--line);padding-bottom:.85rem}.footer{padding:36px 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
-    @media(max-width:900px){.links{display:none}.mobile{display:block}.intro,.about,.contact{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.projects{display:block}.project{margin-bottom:16px}.grid3,.facts{grid-template-columns:1fr}.hero h1{font-size:3.4rem}.nav{height:64px}section{padding:64px 0}}
-    @media(max-width:560px){.services{grid-template-columns:1fr}.hero{background-position:62% center}.project{min-height:260px}.intro .logo-card{padding:1.3rem}.contact-card{padding:1.3rem}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saner Holzbau | Tradition trifft Zukunft</title>
+<meta name="description" content="Dachstühle, Fassaden, Terrassen, Umbauten und Spezialanfertigungen aus Holz.">
+<style>
+body{margin:0;font-family:Arial,sans-serif;line-height:1.6;color:#222}
+header{background:#2f241d;color:#fff;padding:80px 20px;text-align:center}
+section{max-width:1100px;margin:auto;padding:60px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+img{width:100%;height:260px;object-fit:cover;border-radius:8px}
+.card{border:1px solid #ddd;border-radius:8px;overflow:hidden}
+.card div{padding:15px}
+footer{background:#2f241d;color:#fff;padding:30px;text-align:center}
+a{color:#8b5a2b}
+</style>
 </head>
 <body>
-  <header><div class="wrap nav"><a class="brand" href="#top">Saner Holzbau<small>Tradition trifft Zukunft</small></a><nav class="links"><a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#ueber-mich">Über mich</a><a href="#kontakt">Kontakt</a></nav><a class="mobile" href="#kontakt">Kontakt</a></div></header>
 
-  <main id="top">
-    <section class="hero"><div class="wrap inner"><div class="eyebrow">Zimmermannshandwerk aus der Schweiz</div><h1>Saner<br>Holzbau</h1><p>Tradition trifft Zukunft. Dachstühle, Fassaden, Terrassen, Umbauten und Spezialanfertigungen aus Holz – persönlich geplant und direkt umgesetzt.</p><div class="actions"><a class="btn" href="https://wa.me/qr/7JLRPTSJ76JBC1">WhatsApp</a><a class="btn secondary" href="#projekte">Projekte ansehen</a></div></div></section>
+<header>
+<h1>Saner Holzbau</h1>
+<p>Tradition trifft Zukunft</p>
+<p>Persönlich. Direkt. Europaweit.</p>
+</header>
 
-    <section><div class="wrap intro"><div><div class="eyebrow">Persönlich. Direkt. Beweglich.</div><h2>Holzbau ohne Umwege.</h2><p class="lead">Saner Holzbau steht für handwerklich saubere Lösungen, direkte Zusammenarbeit und einen kleinen, flexiblen Betrieb. Je nach Projekt arbeite ich alleine oder mit einem Netzwerk selbständiger Fachleute.</p><div class="grid3"><div class="value"><b>Handwerk</b><p>Saubere Ausführung, langlebige Details und ein Blick für traditionelle wie moderne Bauweisen.</p></div><div class="value"><b>Flexibilität</b><p>Von der Terrasse bis zum Dachstuhl – Lösungen, die zum Objekt und zum Bauherrn passen.</p></div><div class="value"><b>Selbständigkeit</b><p>Direkter Kontakt mit dem Handwerker, kurze Wege und Verantwortung aus einer Hand.</p></div></div></div><div class="logo-card"><img src="assets/logo.webp" alt="Saner Holzbau Logo"></div></div></section>
+<section>
+<h2>Über mich</h2>
+<p>Ich bin Philippe Saner, Zimmermann EFZ und seit mehreren Jahren auf Wanderschaft unterwegs. Die Reise führte mich durch 39 Länder in Europa, Afrika und Asien. Heute verbinde ich traditionelle Handwerkskunst mit internationalen Erfahrungen und realisiere hochwertige Holzbauprojekte direkt für meine Kunden.</p>
+</section>
 
-    <section class="dark" id="leistungen"><div class="wrap"><div class="eyebrow">Leistungen</div><h2>Was ich baue.</h2><p class="lead">Der Schwerpunkt liegt auf hochwertigem Holzbau: sichtbar, sauber, dauerhaft.</p><div class="services"><a class="service" href="#projekte"><img src="assets/norwegen-scheune-aussen.webp" alt="Dachstuhl und Holzbau"><span>Dachstühle</span></a><a class="service" href="#projekte"><img src="assets/gartenhuette.webp" alt="Fassade aus Holz"><span>Fassaden</span></a><a class="service" href="#projekte"><img src="assets/zuerichsee-terrasse.webp" alt="Terrasse aus Holz"><span>Terrassen</span></a><a class="service" href="#projekte"><img src="assets/heizhaus.webp" alt="Umbau und Sanierung"><span>Umbauten</span></a><a class="service" href="#projekte"><img src="assets/israel-tuer.webp" alt="Spezialanfertigung Holz"><span>Spezial</span></a></div></div></section>
+<section>
+<h2>Leistungen</h2>
+<div class="grid">
+<div class="card"><div><h3>Dachstühle</h3></div></div>
+<div class="card"><div><h3>Fassaden</h3></div></div>
+<div class="card"><div><h3>Terrassen</h3></div></div>
+<div class="card"><div><h3>Umbauten</h3></div></div>
+<div class="card"><div><h3>Spezialanfertigungen</h3></div></div>
+</div>
+</section>
 
-    <section id="projekte"><div class="wrap"><div class="projects-head"><div><div class="eyebrow">Ausgewählte Arbeiten</div><h2>Projekte.</h2></div><p class="lead">Arbeiten aus der Schweiz, Deutschland, Norwegen und Israel.</p></div><div class="projects">
-      <article class="project big"><img src="assets/israel-tuer.webp" alt="Spezialanfertigung aus Holz in Israel"><div class="caption"><b>Spezialanfertigung</b><small>Tür- und Fassadenelement in Israel</small></div></article>
-      <article class="project mid"><img src="assets/norwegen-scheune-aussen.webp" alt="Scheune und Vordach in Norwegen"><div class="caption"><b>Scheune & Vordach</b><small>Holzbau in Norwegen</small></div></article>
-      <article class="project small"><img src="assets/ruegen-terrasse-1.webp" alt="Terrasse an der Ostsee"><div class="caption"><b>Terrasse</b><small>Rügen, Ostsee</small></div></article>
-      <article class="project small"><img src="assets/zuerichsee-terrasse.webp" alt="Terrasse am Zürichsee"><div class="caption"><b>Terrasse</b><small>Zürichsee, Schweiz</small></div></article>
-      <article class="project small"><img src="assets/solothurn-terrasse.webp" alt="Terrasse aus Douglasie und Lärche"><div class="caption"><b>Terrasse</b><small>Kanton Solothurn</small></div></article>
-      <article class="project mid"><img src="assets/norwegen-balkon.webp" alt="Balkon mit Blick auf Fjord in Norwegen"><div class="caption"><b>Balkon & Geländer</b><small>Norwegen</small></div></article>
-      <article class="project big"><img src="assets/gartenhuette.webp" alt="Gartenhütte in Schleswig-Holstein"><div class="caption"><b>Gartenhütte</b><small>Schleswig-Holstein</small></div></article>
-    </div></div></section>
+<section>
+<h2>Projekte</h2>
+<div class="grid">
+<div class="card"><img src="heizhaus.webp"><div>Sanierung Heizhaus – Rügen</div></div>
+<div class="card"><img src="ruegen-terrasse-1.webp"><div>Terrasse Ostsee – Rügen</div></div>
+<div class="card"><img src="norwegen-scheune-aussen.webp"><div>Scheune & Vordach – Norwegen</div></div>
+<div class="card"><img src="norwegen-balkon.webp"><div>Balkon – Norwegen</div></div>
+<div class="card"><img src="gartenhuette.webp"><div>Gartenhütte – Schleswig-Holstein</div></div>
+<div class="card"><img src="zuerichsee-terrasse.webp"><div>Terrasse – Zürichsee</div></div>
+<div class="card"><img src="solothurn-terrasse.webp"><div>Terrasse – Solothurn</div></div>
+<div class="card"><img src="israel-tuer.webp"><div>Spezialanfertigung – Israel</div></div>
+</div>
+</section>
 
-    <section class="dark" id="ueber-mich"><div class="wrap about"><img src="assets/wanderschaft.webp" alt="Philippe Saner auf Wanderschaft"><div><div class="eyebrow">Über mich</div><h2>Der Mensch hinter dem Holzbau.</h2><p>Ich bin Philippe Saner, Zimmermann EFZ und Gründer von Saner Holzbau.</p><p>Über drei Jahre Wanderschaft führten mich durch 39 Länder in Europa, Afrika und Asien – von Marokko über Norwegen und Israel bis nach Saudi-Arabien und Nepal. Diese Erfahrung prägt meine Arbeit, steht aber nicht im Vordergrund: Im Zentrum bleibt das Handwerk.</p><p class="quote">Der Kunde arbeitet direkt mit dem Handwerker.</p><p>Ich arbeite bewusst als kleiner Betrieb. Für grössere Projekte ziehe ich bei Bedarf selbständige Fachleute hinzu.</p><div class="facts"><div class="fact"><strong>39</strong><span>Länder Erfahrung</span></div><div class="fact"><strong>3+</strong><span>Jahre Wanderschaft</span></div><div class="fact"><strong>1</strong><span>direkter Ansprechpartner</span></div></div></div></div></section>
+<section>
+<h2>Kontakt</h2>
+<p><strong>Telefon / WhatsApp:</strong> +41 79 519 18 20</p>
+<p><strong>E-Mail:</strong> info@sanerholzbau.ch</p>
+<p><strong>Instagram:</strong> @sanerholzbau</p>
+<p><strong>Standort:</strong> Schweiz</p>
+</section>
 
-    <section id="kontakt"><div class="wrap contact"><div><div class="eyebrow">Kontakt</div><h2>Projekt im Kopf?</h2><p class="lead">Kein Formular. Kein Umweg. Ruf an, schreib eine E-Mail oder melde dich direkt per WhatsApp.</p><div class="actions"><a class="btn" href="https://wa.me/qr/7JLRPTSJ76JBC1">WhatsApp schreiben</a><a class="btn secondary" href="tel:+41795191820">Anrufen</a></div></div><div class="contact-card"><div class="contact-list"><div><strong>Saner Holzbau</strong><br>Philippe Saner<br>Obere Grabenstrasse 24a<br>4227 Büsserach<br>Schweiz</div><a href="tel:+41795191820">+41 79 519 18 20</a><a href="mailto:info@sanerholzbau.ch">info@sanerholzbau.ch</a><a href="https://www.instagram.com/sanerholzbau/" target="_blank" rel="noopener">Instagram @sanerholzbau</a></div></div></div></section>
-  </main>
-  <footer class="footer"><div class="wrap">© <span id="y"></span> Saner Holzbau · Tradition trifft Zukunft</div></footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<footer>
+Saner Holzbau – Tradition trifft Zukunft
+</footer>
+
 </body>
 </html>
