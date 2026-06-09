@@ -1,0 +1,22 @@
+BILDLEGENDE / DATEINAMEN
+
+logo.webp — Saner Holzbau Logo
+holzrahmenbau-norwegen.webp — Holzrahmenbau in Norwegen
+israel-tuer.webp — Tür- und Fassadenelement in Israel
+wanderschaft.webp — Philippe Saner, traditionelle Wanderschaft
+terrasse-ruegen-ostsee-1.webp — Terrasse an der Ostsee auf Rügen
+terrasse-ruegen-ostsee-2.webp — Terrasse auf Rügen mit Meerblick
+terrasse-zuerichsee.webp — Terrasse mit Geländer am Zürichsee
+terrasse-solothurn.webp — Terrasse aus Douglasie/Lärche im Kanton Solothurn
+scheune-norwegen-front.webp — Scheune und Vordach in Norwegen
+scheune-norwegen-aussen.webp — Scheune mit Holzfassade in Norwegen
+scheune-norwegen-dach.webp — Scheune in norwegischer Landschaft
+scheune-norwegen-innen.webp — Innenbereich der Scheune in Norwegen
+balkon-norwegen.webp — Balkon und Geländer in Norwegen
+fassade-hessen.webp — Fassade aus Lärche/Douglasie in Hessen
+gartenhuette-schleswig-holstein.webp — Gartenhütte in Schleswig-Holstein
+heizhaus-vorher.webp — Heizhaus vor der Sanierung
+heizhaus-dachkonstruktion.webp — Dachkonstruktion am Heizhaus
+heizhaus-saniert.webp — Saniertes Heizhaus
+
+Hinweis: Die Website erwartet alle Dateien direkt im Hauptordner des GitHub-Repositories, nicht in einem assets-Ordner.
