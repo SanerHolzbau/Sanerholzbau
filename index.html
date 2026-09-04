@@ -107,6 +107,16 @@
     .contact-list strong{display:block;color:var(--wood);text-transform:uppercase;letter-spacing:.10em;font-size:.72rem;margin-bottom:.25rem}
     footer{background:var(--dark);color:rgba(255,248,236,.68);padding:34px 0;border-top:1px solid rgba(255,248,236,.12);font-size:.9rem}
     .footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+    .legal{width:100%;margin-top:12px;text-align:center;font-size:.72rem;color:rgba(255,248,236,.42)}
+    .legal summary{display:inline-block;cursor:pointer;list-style:none;user-select:none}
+    .legal summary::-webkit-details-marker{display:none}
+    .legal summary:hover{color:rgba(255,248,236,.82)}
+    .legal[open] summary{color:var(--wood2)}
+    .legal-box{max-width:900px;margin:18px auto 0;text-align:left;padding:20px 0 4px;border-top:1px solid rgba(255,248,236,.12);color:rgba(255,248,236,.62);line-height:1.6}
+    .legal-box h3{font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;color:var(--paper);margin:18px 0 6px}
+    .legal-box p{margin:0 0 10px}
+    .legal-box a{color:var(--wood2);text-decoration:underline;text-underline-offset:2px}
     .modal{position:fixed;inset:0;z-index:120;display:none;background:rgba(12,10,8,.93);color:var(--paper);overflow:auto}
     .modal.open{display:block}
     .modal-inner{min-height:100vh;padding:86px 0 44px}
@@ -251,7 +261,7 @@
   </section>
 </main>
 
-<footer><div class="wrap footer-row"><span>© <span id="year"></span> Saner Holzbau · Tradition trifft Zukunft</span><span>Dachstühle · Fassaden · Terrassen · Umbauten · Spezialanfertigungen</span></div></footer>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> Saner Holzbau · Tradition trifft Zukunft</span><span>Dachstühle · Fassaden · Terrassen · Umbauten · Spezialanfertigungen</span><details class="legal"><summary>Impressum · Datenschutz · Rechtliches</summary><div class="legal-box"><h3>Impressum</h3><p><strong>Saner Holzbau</strong><br>Philippe Saner<br>Obere Grabenstrasse 24a<br>4227 Büsserach · Schweiz<br><a href="tel:+41795191820">+41 79 519 18 20</a> · <a href="mailto:info@sanerholzbau.ch">info@sanerholzbau.ch</a></p><h3>Haftung</h3><p>Die Inhalte dieser Website werden mit Sorgfalt erstellt. Eine Gewähr für Richtigkeit, Vollständigkeit, Aktualität oder Verfügbarkeit wird nicht übernommen. Soweit gesetzlich zulässig, ist die Haftung für direkte oder indirekte Schäden, Folgeschäden oder sonstige Nachteile aus der Nutzung oder Nichtnutzung dieser Website sowie aus technischen Störungen ausgeschlossen.</p><p>Für Inhalte, Verfügbarkeit und Datenschutz externer Websites, auf die verlinkt wird, sind ausschliesslich deren Betreiber verantwortlich.</p><h3>Urheberrecht</h3><p>Texte, Bilder, Fotos und sonstige Inhalte dieser Website dürfen ohne ausdrückliche Zustimmung von Saner Holzbau nicht vervielfältigt, veröffentlicht oder anderweitig verwendet werden, soweit keine Rechte Dritter entgegenstehen.</p><h3>Datenschutz</h3><p>Beim Besuch dieser Website können durch den Hostinganbieter technisch notwendige Zugriffsdaten wie IP-Adresse, Zeitpunkt, Browserinformationen und aufgerufene Seiten verarbeitet werden. Bei Kontakt per E-Mail, Telefon, WhatsApp oder Instagram werden die übermittelten Daten zur Bearbeitung der Anfrage und geschäftlichen Kommunikation verwendet.</p><p>Personendaten werden nur soweit bearbeitet, wie dies für den Betrieb der Website, die Kommunikation oder geschäftliche Beziehungen erforderlich ist. Anfragen zu Auskunft, Berichtigung oder Löschung können an <a href="mailto:info@sanerholzbau.ch">info@sanerholzbau.ch</a> gerichtet werden.</p></div></details></div></footer>
 
 <div class="modal" id="projectModal" aria-hidden="true">
   <div class="modal-inner">
@@ -363,51 +373,5 @@
 
   renderFilters(); renderProjects();
 </script>
-  <!-- RECHTLICHES -->
-<style>
-.legal{background:#15120f;color:#777;text-align:center;padding:4px 15px 18px;font-size:11px}
-.legal summary{cursor:pointer;display:inline;list-style:none}
-.legal summary::-webkit-details-marker{display:none}
-.legal summary:hover{color:#fff8ec}
-.legal-box{max-width:850px;margin:20px auto 0;text-align:left;color:#aaa;font-size:13px;line-height:1.6;border-top:1px solid #333;padding-top:20px}
-.legal-box h3{color:#fff8ec;font-size:15px;margin:20px 0 5px}
-.legal-box a{color:#d09a5a}
-</style>
-
-<div class="legal">
-<details>
-<summary>Impressum · Datenschutz · Rechtliches</summary>
-<div class="legal-box">
-
-<h3>Impressum</h3>
-Saner Holzbau<br>
-Philippe Saner<br>
-Obere Grabenstrasse 24a<br>
-4227 Büsserach, Schweiz<br>
-Tel. <a href="tel:+41795191820">+41 79 519 18 20</a><br>
-E-Mail: <a href="mailto:info@sanerholzbau.ch">info@sanerholzbau.ch</a>
-
-<h3>Haftungsausschluss</h3>
-<p>Die Inhalte dieser Website werden mit angemessener Sorgfalt erstellt. Saner Holzbau übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit, Aktualität oder Verfügbarkeit der bereitgestellten Informationen.</p>
-
-<p>Soweit gesetzlich zulässig, wird die Haftung für direkte oder indirekte Schäden, Folgeschäden oder sonstige Nachteile ausgeschlossen, die aus dem Zugriff auf diese Website, deren Nutzung oder Nichtnutzung, technischen Störungen oder der Verwendung der bereitgestellten Informationen entstehen.</p>
-
-<p>Verweise und Links auf Websites Dritter liegen ausserhalb des Verantwortungsbereichs von Saner Holzbau. Für Inhalt, Verfügbarkeit und Datenschutz solcher externen Websites wird keine Verantwortung übernommen.</p>
-
-<h3>Urheberrecht</h3>
-<p>Texte, Bilder, Fotos und sonstige Inhalte dieser Website dürfen ohne ausdrückliche Zustimmung von Saner Holzbau nicht vervielfältigt, veröffentlicht oder anderweitig verwendet werden, soweit keine anderweitigen Rechte bestehen.</p>
-
-<h3>Datenschutz</h3>
-<p>Verantwortlich für die Datenbearbeitung ist Saner Holzbau, Philippe Saner, Büsserach. Beim Besuch dieser Website können technisch notwendige Daten wie IP-Adresse, Zeitpunkt des Zugriffs, Browserinformationen und aufgerufene Seiten durch den Hostinganbieter verarbeitet werden.</p>
-
-<p>Bei einer Kontaktaufnahme per E-Mail, Telefon, WhatsApp oder Instagram werden die dabei übermittelten Daten zur Bearbeitung der Anfrage und der damit verbundenen Kommunikation verwendet.</p>
-
-<p>Personendaten werden nur soweit bearbeitet, wie dies für den Betrieb der Website, die Kommunikation oder die Abwicklung geschäftlicher Beziehungen erforderlich ist. Es gilt das Schweizer Datenschutzrecht.</p>
-
-<p>Anfragen zu Auskunft, Berichtigung oder Löschung können an <a href="mailto:info@sanerholzbau.ch">info@sanerholzbau.ch</a> gerichtet werden.</p>
-
-</div>
-</details>
-</div>
 </body>
 </html>
