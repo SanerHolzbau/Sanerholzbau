@@ -278,169 +278,194 @@
 
 <script>
   // ============================================================
-  // PROJEKTE
-  // Neues Projekt? Nur EINEN Objekt-Block in diese Liste einfügen.
-  // category erzeugt/ordnet den Kategorie-Button automatisch.
-  // preview:true zeigt das Projekt zusätzlich in der Start-Vorschau.
-  // cover ist optional; ohne cover wird automatisch das erste Bild verwendet.
+  // PROJEKTE – EINFACHES SYSTEM
+  //
+  // Neues Projekt:
+  // 1. Einen addProject({...});-Block unten kopieren.
+  // 2. title / place / category / Texte / Bilder ändern.
+  // 3. home:true = zusätzlich auf der Start-Vorschau anzeigen.
+  // 4. cover:"datei.webp" = optionales Titelbild.
+  //    Ohne cover wird automatisch das erste Bild genommen.
+  //
+  // WICHTIG: Zwischen Projekten sind KEINE Kommas nötig.
   // ============================================================
 
-  const PROJECTS = [
-    {
-      title:"Werkstattgebäude Norwegen",
-      place:"Norwegen",
-      category:"Neubau",
-      teaser:"Holzrahmenbau, Fassade, Innenbereich und Balkon.",
-      description:"Ein Werkstattgebäude in Norwegen – vom Holzrahmenbau über Aussen- und Innenansichten bis zum Balkon. Ein Projekt, das Konstruktion und Nutzung klar zusammenbringt.",
-      images:[
-        ["holzrahmenbau-norwegen.webp","Holzrahmenbau des Werkstattgebäudes"],
-        ["scheune-norwegen-aussen.webp","Aussenansicht des Werkstattgebäudes"],
-        ["scheune-norwegen-innen.webp","Innenbereich mit Holzverkleidung"],
-        ["balkon-norwegen.webp","Balkon und Aussenbereich"]
-      ],
-      featured:true
-    },
+  const PROJECTS=[];
+  function addProject(project){
+    if(!project || !project.title || !Array.isArray(project.images) || !project.images.length) return;
+    project.place=project.place || "";
+    project.category=project.category || "";
+    project.teaser=project.teaser || "";
+    project.description=project.description || "";
+    project.cover=project.cover || project.images[0][0];
+    project.home=project.home===true;
+    PROJECTS.push(project);
+  }
 
-    {
-      title:"Vordach Maschinenunterstand",
-      place:"Norwegen",
-      category:"Neubau",
-      preview:true,
-      teaser:"Dachkonstruktion für landwirtschaftliche Nutzung.",
-      description:"Vordach beziehungsweise Maschinenunterstand in Norwegen. Eine einfache, kräftige Konstruktion für den praktischen Einsatz.",
-      images:[
-        ["scheune-norwegen-dach.webp","Dachkonstruktion des Maschinenunterstands"],
-        ["scheune-norwegen-front.webp","Frontansicht mit Unterstand"]
-      ]
-    },
+  addProject({
+    title:"Werkstattgebäude Norwegen",
+    place:"Norwegen",
+    category:"Neubau",
+    teaser:"Holzrahmenbau, Fassade, Innenbereich und Balkon.",
+    description:"Ein Werkstattgebäude in Norwegen – vom Holzrahmenbau über Aussen- und Innenansichten bis zum Balkon. Ein Projekt, das Konstruktion und Nutzung klar zusammenbringt.",
+    images:[
+      ["holzrahmenbau-norwegen.webp","Holzrahmenbau des Werkstattgebäudes"],
+      ["scheune-norwegen-aussen.webp","Aussenansicht des Werkstattgebäudes"],
+      ["scheune-norwegen-innen.webp","Innenbereich mit Holzverkleidung"],
+      ["balkon-norwegen.webp","Balkon und Aussenbereich"]
+    ]
+  });
 
-    {
-      title:"Heizhaus-Sanierung",
-      place:"Rügen, Deutschland",
-      category:"Umbau",
-      teaser:"Alter Bestand, offenes Dach und fertige Ausführung.",
-      description:"Sanierung eines Heizhauses auf Rügen. Das Projekt zeigt den Weg vom Bestand über die offene Dachkonstruktion bis zur fertigen Hülle.",
-      images:[
-        ["heizhaus-vorher.webp","Bestand vor der Sanierung"],
-        ["heizhaus-dachkonstruktion.webp","Offenes Dach während der Arbeiten"],
-        ["heizhaus-saniert.webp","Fertige Ausführung"]
-      ]
-    },
+  addProject({
+    title:"Vordach Maschinenunterstand",
+    place:"Norwegen",
+    category:"Neubau",
+    home:true,
+    teaser:"Dachkonstruktion für landwirtschaftliche Nutzung.",
+    description:"Vordach beziehungsweise Maschinenunterstand in Norwegen. Eine einfache, kräftige Konstruktion für den praktischen Einsatz.",
+    images:[
+      ["scheune-norwegen-dach.webp","Dachkonstruktion des Maschinenunterstands"],
+      ["scheune-norwegen-front.webp","Frontansicht mit Unterstand"]
+    ]
+  });
 
-    {
-      title:"Terrasse an der Ostsee",
-      place:"Rügen, Deutschland",
-      category:"Terrassen",
-      preview:true,
-      teaser:"Terrassenbau an der Ostsee.",
-      description:"Terrasse an der Ostsee auf Rügen. Holz im Aussenbereich, passend zur Umgebung und Nutzung.",
-      images:[
-        ["terrasse-ruegen-ostsee-1.webp","Terrasse an der Ostsee"],
-        ["terrasse-ruegen-ostsee-2.webp","Zweite Ansicht der Terrasse"]
-      ]
-    },
+  addProject({
+    title:"Heizhaus-Sanierung",
+    place:"Rügen, Deutschland",
+    category:"Umbau",
+    teaser:"Alter Bestand, offenes Dach und fertige Ausführung.",
+    description:"Sanierung eines Heizhauses auf Rügen. Das Projekt zeigt den Weg vom Bestand über die offene Dachkonstruktion bis zur fertigen Hülle.",
+    images:[
+      ["heizhaus-vorher.webp","Bestand vor der Sanierung"],
+      ["heizhaus-dachkonstruktion.webp","Offenes Dach während der Arbeiten"],
+      ["heizhaus-saniert.webp","Fertige Ausführung"]
+    ]
+  });
 
-    {
-      title:"Terrasse Zürichsee",
-      place:"Schweiz",
-      category:"Terrassen",
-      teaser:"Terrasse mit Geländer am Zürichsee.",
-      description:"Terrasse mit Geländer am Zürichsee. Ein Aussenbereich aus Holz mit Blick auf die Umgebung.",
-      images:[
-        ["terrasse-zuerichsee.webp","Terrasse mit Geländer am Zürichsee"]
-      ]
-    },
+  addProject({
+    title:"Terrasse an der Ostsee",
+    place:"Rügen, Deutschland",
+    category:"Terrassen",
+    home:true,
+    teaser:"Terrassenbau an der Ostsee.",
+    description:"Terrasse an der Ostsee auf Rügen. Holz im Aussenbereich, passend zur Umgebung und Nutzung.",
+    images:[
+      ["terrasse-ruegen-ostsee-1.webp","Terrasse an der Ostsee"],
+      ["terrasse-ruegen-ostsee-2.webp","Zweite Ansicht der Terrasse"]
+    ]
+  });
 
-    {
-      title:"Terrasse Solothurn",
-      place:"Schweiz",
-      category:"Terrassen",
-      teaser:"Terrasse aus Douglasie und Lärche.",
-      description:"Terrasse aus Douglasie und Lärche im Kanton Solothurn. Eine Holzarbeit im Aussenbereich mit individueller Form.",
-      images:[
-        ["terrasse-solothurn.webp","Terrasse aus Douglasie und Lärche"]
-      ]
-    },
+  addProject({
+    title:"Terrasse Zürichsee",
+    place:"Schweiz",
+    category:"Terrassen",
+    teaser:"Terrasse mit Geländer am Zürichsee.",
+    description:"Terrasse mit Geländer am Zürichsee. Ein Aussenbereich aus Holz mit Blick auf die Umgebung.",
+    images:[
+      ["terrasse-zuerichsee.webp","Terrasse mit Geländer am Zürichsee"]
+    ]
+  });
 
-    {
-      title:"Holzfassade Hessen",
-      place:"Deutschland",
-      category:"Fassaden",
-      teaser:"Fassade aus Lärche und Douglasie.",
-      description:"Holzfassade aus Lärche und Douglasie in Hessen. Eine ruhige Fassadenarbeit mit natürlicher Materialwirkung.",
-      images:[
-        ["fassade-hessen.webp","Fassade aus Lärche und Douglasie"]
-      ]
-    },
+  addProject({
+    title:"Terrasse Solothurn",
+    place:"Schweiz",
+    category:"Terrassen",
+    teaser:"Terrasse aus Douglasie und Lärche.",
+    description:"Terrasse aus Douglasie und Lärche im Kanton Solothurn. Eine Holzarbeit im Aussenbereich mit individueller Form.",
+    images:[
+      ["terrasse-solothurn.webp","Terrasse aus Douglasie und Lärche"]
+    ]
+  });
 
-    {
-      title:"Gartenhütte Schleswig-Holstein",
-      place:"Deutschland",
-      category:"Neubau",
-      teaser:"Individuell gebaute Gartenhütte.",
-      description:"Gartenhütte in Schleswig-Holstein. Ein kleineres Projekt, aber mit klarer Konstruktion und sauberer Ausführung.",
-      images:[
-        ["gartenhuette-schleswig-holstein.webp","Gartenhütte in Schleswig-Holstein"]
-      ]
-    },
+  addProject({
+    title:"Holzfassade Hessen",
+    place:"Deutschland",
+    category:"Fassaden",
+    teaser:"Fassade aus Lärche und Douglasie.",
+    description:"Holzfassade aus Lärche und Douglasie in Hessen. Eine ruhige Fassadenarbeit mit natürlicher Materialwirkung.",
+    images:[
+      ["fassade-hessen.webp","Fassade aus Lärche und Douglasie"]
+    ]
+  });
 
-    {
-      title:"Klostertür Zionsberg",
-      place:"Jerusalem, Israel",
-      category:"Spezial",
-      preview:true,
-      teaser:"Holztür für ein Kloster auf dem Zionsberg.",
-      description:"Eine Holztür für ein Kloster auf dem Zionsberg in Jerusalem. Ein besonderer Ort, ein besonderes Projekt – und eine Erfahrung, die den Blick auf das eigene Handwerk prägt.",
-      images:[
-        ["israel-tuer.webp","Klostertür auf dem Zionsberg in Jerusalem"]
-      ],
-      featured:true
-    },
+  addProject({
+    title:"Gartenhütte Schleswig-Holstein",
+    place:"Deutschland",
+    category:"Neubau",
+    teaser:"Individuell gebaute Gartenhütte.",
+    description:"Gartenhütte in Schleswig-Holstein. Ein kleineres Projekt, aber mit klarer Konstruktion und sauberer Ausführung.",
+    images:[
+      ["gartenhuette-schleswig-holstein.webp","Gartenhütte in Schleswig-Holstein"]
+    ]
+  });
 
-    {
-      title:"Sanierung historischer Blockbau",
-      place:"Wallis, Schweiz",
-      category:"Denkmalpflege",
-      teaser:"Sanierung und konstruktive Instandsetzung eines historischen Blockbaus.",
-      description:"Sanierung eines historischen Blockbaus mit Ersatz geschädigter Holzteile und konstruktiver Ergänzung des Bestands. Bestehende Bauteile bleiben soweit möglich erhalten und werden gezielt ergänzt.",
-      cover:"denkmalpflege-blockbau-gesamt.webp",
-      images:[
-        ["denkmalpflege-blockbau-bestand.webp","Bestand vor der Sanierung"],
-        ["denkmalpflege-blockbau-innen.webp","Innenansicht des historischen Blockbaus"],
-        ["denkmalpflege-blockbau-gesamt.webp","Abstützung und neue Holzkonstruktion"],
-        ["denkmalpflege-blockbau-ecke.webp","Erneuerung geschädigter Blockbauteile"],
-        ["denkmalpflege-blockbau-wand.webp","Detail der erneuerten Blockwand"]
-      ]
-    }
-  ];
+  addProject({
+    title:"Klostertür Zionsberg",
+    place:"Jerusalem, Israel",
+    category:"Spezial",
+    home:true,
+    teaser:"Holztür für ein Kloster auf dem Zionsberg.",
+    description:"Eine Holztür für ein Kloster auf dem Zionsberg in Jerusalem. Ein besonderer Ort, ein besonderes Projekt – und eine Erfahrung, die den Blick auf das eigene Handwerk prägt.",
+    images:[
+      ["israel-tuer.webp","Klostertür auf dem Zionsberg in Jerusalem"]
+    ]
+  });
 
-  // Kategorien entstehen automatisch aus den oben eingetragenen Projekten.
-  const FILTERS=[...new Set(PROJECTS.map(project=>project.category))];
+  addProject({
+    title:"Sanierung historischer Blockbau",
+    place:"Wallis, Schweiz",
+    category:"Denkmalpflege",
+    teaser:"Sanierung und konstruktive Instandsetzung eines historischen Blockbaus.",
+    description:"Sanierung eines historischen Blockbaus mit Ersatz geschädigter Holzteile und konstruktiver Ergänzung des Bestands. Bestehende Bauteile bleiben soweit möglich erhalten und werden gezielt ergänzt.",
+    cover:"denkmalpflege-blockbau-gesamt.webp",
+    images:[
+      ["denkmalpflege-blockbau-bestand.webp","Bestand vor der Sanierung"],
+      ["denkmalpflege-blockbau-innen.webp","Innenansicht des historischen Blockbaus"],
+      ["denkmalpflege-blockbau-gesamt.webp","Abstützung und neue Holzkonstruktion"],
+      ["denkmalpflege-blockbau-ecke.webp","Erneuerung geschädigter Blockbauteile"],
+      ["denkmalpflege-blockbau-wand.webp","Detail der erneuerten Blockwand"]
+    ]
+  });
 
-  const projectGrid=document.getElementById("projectGrid"), projectFilters=document.getElementById("projectFilters");
-  const modal=document.getElementById("projectModal"), modalTitle=document.getElementById("modalTitle"), modalPlace=document.getElementById("modalPlace"), modalText=document.getElementById("modalText"), modalGallery=document.getElementById("modalGallery"), closeModal=document.getElementById("closeModal");
-  const zoom=document.getElementById("zoom"), zoomImg=zoom.querySelector("img");
+  // Kategorien werden automatisch aus category erzeugt.
+  const FILTERS=[...new Set(PROJECTS.map(p=>p.category).filter(Boolean))];
+
+  const projectGrid=document.getElementById("projectGrid");
+  const projectFilters=document.getElementById("projectFilters");
+  const modal=document.getElementById("projectModal");
+  const modalTitle=document.getElementById("modalTitle");
+  const modalPlace=document.getElementById("modalPlace");
+  const modalText=document.getElementById("modalText");
+  const modalGallery=document.getElementById("modalGallery");
+  const closeModal=document.getElementById("closeModal");
+  const zoom=document.getElementById("zoom");
+  const zoomImg=zoom.querySelector("img");
 
   function renderFilters(){
     projectFilters.innerHTML="";
     FILTERS.forEach(filter=>{
       const btn=document.createElement("button");
-      btn.className="filter-btn"; btn.type="button"; btn.textContent=filter; btn.dataset.filter=filter;
-      btn.onclick=()=>{document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");renderProjects(filter)};
+      btn.className="filter-btn";
+      btn.type="button";
+      btn.textContent=filter;
+      btn.onclick=()=>{
+        document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+        renderProjects(filter);
+      };
       projectFilters.appendChild(btn);
     });
   }
+
   function renderProjects(filter=null){
     projectGrid.innerHTML="";
-    const isPreview=!filter;
-    const visibleProjects=isPreview
-      ? PROJECTS.filter(project=>project.preview)
-      : PROJECTS.filter(project=>project.category===filter);
+    const isHome=!filter;
+    const visible=isHome ? PROJECTS.filter(p=>p.home) : PROJECTS.filter(p=>p.category===filter);
 
-    visibleProjects.forEach((project,index)=>{
+    visible.forEach((project,index)=>{
       const cover=project.cover || project.images[0][0];
 
-      if(isPreview){
+      if(isHome){
         const item=document.createElement("article");
         item.className="preview-project";
         item.tabIndex=0;
@@ -454,42 +479,88 @@
       }
 
       const card=document.createElement("article");
-      card.className="project-card"+(project.featured?" featured":(index%5===1?" wide":""));
-      card.tabIndex=0; card.setAttribute("role","button"); card.setAttribute("aria-label",project.title+" öffnen");
+      card.className="project-card";
+      card.tabIndex=0;
+      card.setAttribute("role","button");
+      card.setAttribute("aria-label",project.title+" öffnen");
       card.innerHTML=`<span class="project-count">${project.images.length} Bild${project.images.length>1?"er":""}</span><img src="${cover}" alt="${project.title}" loading="lazy"><div class="project-meta"><span class="place">${project.place}</span><b>${project.title}</b><small>${project.teaser}</small></div><div class="project-hover">Projekt öffnen →</div>`;
       card.onclick=()=>openProject(project);
       card.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openProject(project)}};
       projectGrid.appendChild(card);
     });
   }
+
   function openProject(project){
-    modalTitle.textContent=project.title; modalPlace.textContent=project.place; modalText.textContent=project.description; modalGallery.innerHTML="";
+    modalTitle.textContent=project.title;
+    modalPlace.textContent=project.place;
+    modalText.textContent=project.description;
+    modalGallery.innerHTML="";
     project.images.forEach((image,index)=>{
       const fig=document.createElement("figure");
       fig.innerHTML=`<img src="${image[0]}" alt="${image[1]}" loading="${index===0?"eager":"lazy"}"><figcaption>${image[1]}</figcaption>`;
       fig.querySelector("img").onclick=()=>openZoom(image[0],image[1]);
       modalGallery.appendChild(fig);
     });
-    modal.classList.add("open"); modal.setAttribute("aria-hidden","false"); document.body.classList.add("modal-open");
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.classList.add("modal-open");
   }
-  function closeProject(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.classList.remove("modal-open")}
-  function openZoom(src,alt){zoomImg.src=src;zoomImg.alt=alt;zoom.classList.add("open")}
-  function closeZoom(){zoom.classList.remove("open");zoomImg.src="";zoomImg.alt=""}
-  closeModal.onclick=closeProject; modal.onclick=e=>{if(e.target===modal)closeProject()}; zoom.onclick=closeZoom;
+
+  function closeProject(){
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.classList.remove("modal-open");
+  }
+
+  function openZoom(src,alt){
+    zoomImg.src=src;
+    zoomImg.alt=alt;
+    zoom.classList.add("open");
+  }
+
+  function closeZoom(){
+    zoom.classList.remove("open");
+    zoomImg.src="";
+    zoomImg.alt="";
+  }
+
+  closeModal.onclick=closeProject;
+  modal.onclick=e=>{if(e.target===modal)closeProject()};
+  zoom.onclick=closeZoom;
   document.onkeydown=e=>{if(e.key==="Escape"){closeZoom();closeProject()}};
   document.getElementById("year").textContent=new Date().getFullYear();
 
   const reveals=document.querySelectorAll(".reveal");
-  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}})},{threshold:.14});
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.14});
   reveals.forEach(el=>observer.observe(el));
 
-  const heroBgs=[...document.querySelectorAll(".hero-bg")], dots=document.getElementById("heroDots");
+  const heroBgs=[...document.querySelectorAll(".hero-bg")];
+  const dots=document.getElementById("heroDots");
   let heroIndex=0;
-  heroBgs.forEach((_,i)=>{const d=document.createElement("button");d.className="hero-dot"+(i===0?" active":"");d.onclick=()=>setHero(i);dots.appendChild(d)});
-  function setHero(i){heroBgs[heroIndex].classList.remove("active");dots.children[heroIndex].classList.remove("active");heroIndex=i;heroBgs[heroIndex].classList.add("active");dots.children[heroIndex].classList.add("active")}
+  heroBgs.forEach((_,i)=>{
+    const d=document.createElement("button");
+    d.className="hero-dot"+(i===0?" active":"");
+    d.onclick=()=>setHero(i);
+    dots.appendChild(d);
+  });
+  function setHero(i){
+    heroBgs[heroIndex].classList.remove("active");
+    dots.children[heroIndex].classList.remove("active");
+    heroIndex=i;
+    heroBgs[heroIndex].classList.add("active");
+    dots.children[heroIndex].classList.add("active");
+  }
   setInterval(()=>setHero((heroIndex+1)%heroBgs.length),6500);
 
-  renderFilters(); renderProjects();
+  renderFilters();
+  renderProjects();
 </script>
 </body>
 </html>
