@@ -284,17 +284,134 @@
   // preview:true zeigt das Projekt zusätzlich in der Start-Vorschau.
   // cover ist optional; ohne cover wird automatisch das erste Bild verwendet.
   // ============================================================
+
   const PROJECTS = [
-    {title:"Werkstattgebäude Norwegen",place:"Norwegen",category:"Neubau",teaser:"Holzrahmenbau, Fassade, Innenbereich und Balkon.",description:"Ein Werkstattgebäude in Norwegen – vom Holzrahmenbau über Aussen- und Innenansichten bis zum Balkon. Ein Projekt, das Konstruktion und Nutzung klar zusammenbringt.",images:[["holzrahmenbau-norwegen.webp","Holzrahmenbau des Werkstattgebäudes"],["scheune-norwegen-aussen.webp","Aussenansicht des Werkstattgebäudes"],["scheune-norwegen-innen.webp","Innenbereich mit Holzverkleidung"],["balkon-norwegen.webp","Balkon und Aussenbereich"]],featured:true},
-    {title:"Vordach Maschinenunterstand",place:"Norwegen",category:"Neubau",preview:true,teaser:"Dachkonstruktion für landwirtschaftliche Nutzung.",description:"Vordach beziehungsweise Maschinenunterstand in Norwegen. Eine einfache, kräftige Konstruktion für den praktischen Einsatz.",images:[["scheune-norwegen-dach.webp","Dachkonstruktion des Maschinenunterstands"],["scheune-norwegen-front.webp","Frontansicht mit Unterstand"]]},
-    {title:"Heizhaus-Sanierung",place:"Rügen, Deutschland",category:"Umbau",teaser:"Alter Bestand, offenes Dach und fertige Ausführung.",description:"Sanierung eines Heizhauses auf Rügen. Das Projekt zeigt den Weg vom Bestand über die offene Dachkonstruktion bis zur fertigen Hülle.",images:[["heizhaus-vorher.webp","Bestand vor der Sanierung"],["heizhaus-dachkonstruktion.webp","Offenes Dach während der Arbeiten"],["heizhaus-saniert.webp","Fertige Ausführung"]]},
-    {title:"Terrasse an der Ostsee",place:"Rügen, Deutschland",category:"Terrassen",preview:true,teaser:"Terrassenbau an der Ostsee.",description:"Terrasse an der Ostsee auf Rügen. Holz im Aussenbereich, passend zur Umgebung und Nutzung.",images:[["terrasse-ruegen-ostsee-1.webp","Terrasse an der Ostsee"],["terrasse-ruegen-ostsee-2.webp","Zweite Ansicht der Terrasse"]]},
-    {title:"Terrasse Zürichsee",place:"Schweiz",category:"Terrassen",teaser:"Terrasse mit Geländer am Zürichsee.",description:"Terrasse mit Geländer am Zürichsee. Ein Aussenbereich aus Holz mit Blick auf die Umgebung.",images:[["terrasse-zuerichsee.webp","Terrasse mit Geländer am Zürichsee"]]},
-    {title:"Terrasse Solothurn",place:"Schweiz",category:"Terrassen",teaser:"Terrasse aus Douglasie und Lärche.",description:"Terrasse aus Douglasie und Lärche im Kanton Solothurn. Eine Holzarbeit im Aussenbereich mit individueller Form.",images:[["terrasse-solothurn.webp","Terrasse aus Douglasie und Lärche"]]},
-    {title:"Holzfassade Hessen",place:"Deutschland",category:"Fassaden",teaser:"Fassade aus Lärche und Douglasie.",description:"Holzfassade aus Lärche und Douglasie in Hessen. Eine ruhige Fassadenarbeit mit natürlicher Materialwirkung.",images:[["fassade-hessen.webp","Fassade aus Lärche und Douglasie"]]},
-    {title:"Gartenhütte Schleswig-Holstein",place:"Deutschland",category:"Neubau",teaser:"Individuell gebaute Gartenhütte.",description:"Gartenhütte in Schleswig-Holstein. Ein kleineres Projekt, aber mit klarer Konstruktion und sauberer Ausführung.",images:[["gartenhuette-schleswig-holstein.webp","Gartenhütte in Schleswig-Holstein"]]},
-    {title:"Klostertür Zionsberg",place:"Jerusalem, Israel",category:"Spezial",preview:true,teaser:"Holztür für ein Kloster auf dem Zionsberg.",description:"Eine Holztür für ein Kloster auf dem Zionsberg in Jerusalem. Ein besonderer Ort, ein besonderes Projekt – und eine Erfahrung, die den Blick auf das eigene Handwerk prägt.",images:[["israel-tuer.webp","Klostertür auf dem Zionsberg in Jerusalem"]],featured:true}
-    {title:"Sanierung historischer Blockbau", place:"Wallis, Schweiz", category:"Denkmalpflege", teaser:"Sanierung und konstruktive Instandsetzung eines historischen Blockbaus.", description:"Sanierung eines historischen Blockbaus mit Ersatz geschädigter Holzteile und konstruktiver Ergänzung des Bestands. Bestehende Bauteile bleiben soweit möglich erhalten und werden gezielt ergänzt.", cover:"denkmalpflege-blockbau-gesamt.webp", images:[  ["denkmalpflege-blockbau-bestand.webp","Bestand vor der Sanierung"], ["denkmalpflege-blockbau-innen.webp","Innenansicht des historischen Blockbaus"], ["denkmalpflege-blockbau-gesamt.webp","Abstützung und neue Holzkonstruktion"], ["denkmalpflege-blockbau-ecke.webp","Erneuerung geschädigter Blockbauteile"], ["denkmalpflege-blockbau-wand.webp","Detail der erneuerten Blockwand"] ]},
+    {
+      title:"Werkstattgebäude Norwegen",
+      place:"Norwegen",
+      category:"Neubau",
+      teaser:"Holzrahmenbau, Fassade, Innenbereich und Balkon.",
+      description:"Ein Werkstattgebäude in Norwegen – vom Holzrahmenbau über Aussen- und Innenansichten bis zum Balkon. Ein Projekt, das Konstruktion und Nutzung klar zusammenbringt.",
+      images:[
+        ["holzrahmenbau-norwegen.webp","Holzrahmenbau des Werkstattgebäudes"],
+        ["scheune-norwegen-aussen.webp","Aussenansicht des Werkstattgebäudes"],
+        ["scheune-norwegen-innen.webp","Innenbereich mit Holzverkleidung"],
+        ["balkon-norwegen.webp","Balkon und Aussenbereich"]
+      ],
+      featured:true
+    },
+
+    {
+      title:"Vordach Maschinenunterstand",
+      place:"Norwegen",
+      category:"Neubau",
+      preview:true,
+      teaser:"Dachkonstruktion für landwirtschaftliche Nutzung.",
+      description:"Vordach beziehungsweise Maschinenunterstand in Norwegen. Eine einfache, kräftige Konstruktion für den praktischen Einsatz.",
+      images:[
+        ["scheune-norwegen-dach.webp","Dachkonstruktion des Maschinenunterstands"],
+        ["scheune-norwegen-front.webp","Frontansicht mit Unterstand"]
+      ]
+    },
+
+    {
+      title:"Heizhaus-Sanierung",
+      place:"Rügen, Deutschland",
+      category:"Umbau",
+      teaser:"Alter Bestand, offenes Dach und fertige Ausführung.",
+      description:"Sanierung eines Heizhauses auf Rügen. Das Projekt zeigt den Weg vom Bestand über die offene Dachkonstruktion bis zur fertigen Hülle.",
+      images:[
+        ["heizhaus-vorher.webp","Bestand vor der Sanierung"],
+        ["heizhaus-dachkonstruktion.webp","Offenes Dach während der Arbeiten"],
+        ["heizhaus-saniert.webp","Fertige Ausführung"]
+      ]
+    },
+
+    {
+      title:"Terrasse an der Ostsee",
+      place:"Rügen, Deutschland",
+      category:"Terrassen",
+      preview:true,
+      teaser:"Terrassenbau an der Ostsee.",
+      description:"Terrasse an der Ostsee auf Rügen. Holz im Aussenbereich, passend zur Umgebung und Nutzung.",
+      images:[
+        ["terrasse-ruegen-ostsee-1.webp","Terrasse an der Ostsee"],
+        ["terrasse-ruegen-ostsee-2.webp","Zweite Ansicht der Terrasse"]
+      ]
+    },
+
+    {
+      title:"Terrasse Zürichsee",
+      place:"Schweiz",
+      category:"Terrassen",
+      teaser:"Terrasse mit Geländer am Zürichsee.",
+      description:"Terrasse mit Geländer am Zürichsee. Ein Aussenbereich aus Holz mit Blick auf die Umgebung.",
+      images:[
+        ["terrasse-zuerichsee.webp","Terrasse mit Geländer am Zürichsee"]
+      ]
+    },
+
+    {
+      title:"Terrasse Solothurn",
+      place:"Schweiz",
+      category:"Terrassen",
+      teaser:"Terrasse aus Douglasie und Lärche.",
+      description:"Terrasse aus Douglasie und Lärche im Kanton Solothurn. Eine Holzarbeit im Aussenbereich mit individueller Form.",
+      images:[
+        ["terrasse-solothurn.webp","Terrasse aus Douglasie und Lärche"]
+      ]
+    },
+
+    {
+      title:"Holzfassade Hessen",
+      place:"Deutschland",
+      category:"Fassaden",
+      teaser:"Fassade aus Lärche und Douglasie.",
+      description:"Holzfassade aus Lärche und Douglasie in Hessen. Eine ruhige Fassadenarbeit mit natürlicher Materialwirkung.",
+      images:[
+        ["fassade-hessen.webp","Fassade aus Lärche und Douglasie"]
+      ]
+    },
+
+    {
+      title:"Gartenhütte Schleswig-Holstein",
+      place:"Deutschland",
+      category:"Neubau",
+      teaser:"Individuell gebaute Gartenhütte.",
+      description:"Gartenhütte in Schleswig-Holstein. Ein kleineres Projekt, aber mit klarer Konstruktion und sauberer Ausführung.",
+      images:[
+        ["gartenhuette-schleswig-holstein.webp","Gartenhütte in Schleswig-Holstein"]
+      ]
+    },
+
+    {
+      title:"Klostertür Zionsberg",
+      place:"Jerusalem, Israel",
+      category:"Spezial",
+      preview:true,
+      teaser:"Holztür für ein Kloster auf dem Zionsberg.",
+      description:"Eine Holztür für ein Kloster auf dem Zionsberg in Jerusalem. Ein besonderer Ort, ein besonderes Projekt – und eine Erfahrung, die den Blick auf das eigene Handwerk prägt.",
+      images:[
+        ["israel-tuer.webp","Klostertür auf dem Zionsberg in Jerusalem"]
+      ],
+      featured:true
+    },
+
+    {
+      title:"Sanierung historischer Blockbau",
+      place:"Wallis, Schweiz",
+      category:"Denkmalpflege",
+      teaser:"Sanierung und konstruktive Instandsetzung eines historischen Blockbaus.",
+      description:"Sanierung eines historischen Blockbaus mit Ersatz geschädigter Holzteile und konstruktiver Ergänzung des Bestands. Bestehende Bauteile bleiben soweit möglich erhalten und werden gezielt ergänzt.",
+      cover:"denkmalpflege-blockbau-gesamt.webp",
+      images:[
+        ["denkmalpflege-blockbau-bestand.webp","Bestand vor der Sanierung"],
+        ["denkmalpflege-blockbau-innen.webp","Innenansicht des historischen Blockbaus"],
+        ["denkmalpflege-blockbau-gesamt.webp","Abstützung und neue Holzkonstruktion"],
+        ["denkmalpflege-blockbau-ecke.webp","Erneuerung geschädigter Blockbauteile"],
+        ["denkmalpflege-blockbau-wand.webp","Detail der erneuerten Blockwand"]
+      ]
+    }
   ];
 
   // Kategorien entstehen automatisch aus den oben eingetragenen Projekten.
